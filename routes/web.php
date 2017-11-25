@@ -18,3 +18,13 @@ Route::name('dashbord')->get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/hobby/{hobby}', 'HobbyController@show');
+
+Route::get('/post/{post}', 'PostController@show');
+
+Route::get('/hobby/show', function(){
+    $hobby = \App\hobyy::all();
+
+    return 'hello world';
+});
