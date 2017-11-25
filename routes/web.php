@@ -23,8 +23,25 @@ Route::get('/hobby/{hobby}', 'HobbyController@show');
 
 Route::get('/post/{post}', 'PostController@show');
 
-Route::get('/hobby/show', function(){
-    $hobby = \App\hobyy::all();
+Route::get('/hobbys/show', function(){
 
-    return 'hello world';
+    $hobby = \App\hobby::all();
+    $hobby_new = $hobby->each->archive(); //改变属性 返回新的数组
+    return $hobby_new;
+});
+
+Route::get('/hobbys/hobby', function (){
+    $hobby = \App\hobby::all();
+    return $hobby->map->hobby; // map获取单一属性
+});
+
+Route::get('/hobbys/sum', function(){
+    $hobby = \App\hobby::all();
+    return $hobby->sum->id; // just sum
+});
+
+Route::get('/hobbys/sort', function(){
+    $hobby = \App\hobby::all();
+    $hobbys = $hobby->sortBy->user_id;
+    return $hobbys->values()->all();
 });
