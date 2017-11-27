@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use App\hobby;
 use Illuminate\Http\Request;
+use Facades\App\Services\Weibo;
 
 class HobbyController extends Controller
 {
+
+    public function showFacade()
+    {
+        Weibo::publish('facades 在控制器中的使用');
+    }
     /**
      * Display a listing of the resource.
      *

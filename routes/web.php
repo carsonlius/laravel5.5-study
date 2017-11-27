@@ -1,5 +1,7 @@
 <?php
 
+use Facades\App\Services\Weibo;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,3 +47,16 @@ Route::get('/hobbys/sort', function(){
     $hobbys = $hobby->sortBy->user_id;
     return $hobbys->values()->all();
 });
+
+
+Route::get('/mail/markdown', function() {
+    $obj_email = new App\Mail\LessonPublished(App\User::first());
+
+    Mail::to(App\User::first())->send($obj_email);
+});
+
+Route::get('/Weibo/publish', function(){
+    Weibo::publish('这是一条重要的微博信息');
+});
+
+Route::get('/Hobbys/showFacade', 'HobbyController@showFacade');

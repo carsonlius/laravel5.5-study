@@ -168,7 +168,8 @@ return [
          * Package Service Providers...
          */
 
-        /*
+
+         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
@@ -225,6 +226,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Form' => \Collective\Html\FormFacade::class,
 
     ],
 

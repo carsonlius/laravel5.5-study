@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}" id="token">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
 
 
 </head>
@@ -74,7 +76,19 @@
             </div>
         </nav>
 
-        @yield('content')
+        <div class="container">
+
+            <section class="content">
+
+                <div class="pad group">
+
+                    @yield('content')
+
+                </div>
+
+            </section>
+
+        </div>
     </div>
 
     <!-- Scripts -->
