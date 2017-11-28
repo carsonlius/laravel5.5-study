@@ -1,6 +1,9 @@
 <?php
 
 use Facades\App\Services\Weibo;
+Event::listen('eloquent.created: \App\Post', function(){
+    dump(' A hobby is created');
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +23,17 @@ Route::name('dashbord')->get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/hobby/create', 'HobbyController@create');
+
+Route::post('/hobby/store', 'HobbyController@store');
+
+
+
+
+
+
+
 
 Route::get('/hobby/{hobby}', 'HobbyController@show');
 

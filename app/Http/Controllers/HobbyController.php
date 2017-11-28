@@ -30,7 +30,7 @@ class HobbyController extends Controller
      */
     public function create()
     {
-        //
+        return view('hobbys.create');
     }
 
     /**
@@ -39,9 +39,14 @@ class HobbyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(\App\Http\Requests\HobbyStoreRequest $request)
     {
-        //
+
+
+       $result = \App\hobby::create($request->toArray());
+       $hobby_last = $result->toArray();
+
+        return redirect('/hobby/' . $hobby_last['id']);
     }
 
     /**
@@ -79,7 +84,7 @@ class HobbyController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified resource from .
      *
      * @param  \App\hobby  $hobby
      * @return \Illuminate\Http\Response
