@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\hobby;
 use Illuminate\Http\Request;
 use Facades\App\Services\Weibo;
+use App\Events\HobbyWasPublished;
 
 class HobbyController extends Controller
 {
@@ -45,8 +46,9 @@ class HobbyController extends Controller
 
        $result = \App\hobby::create($request->toArray());
        $hobby_last = $result->toArray();
+       event(new HobbyWasPublished($hobby_last));
 
-        return redirect('/hobby/' . $hobby_last['id']);
+        // return redirect('/hobby/' . $hobby_last['id']);
     }
 
     /**

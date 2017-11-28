@@ -1,9 +1,11 @@
 <?php
 
 use Facades\App\Services\Weibo;
-Event::listen('eloquent.created: \App\Post', function(){
-    dump(' A hobby is created');
-});
+
+// 监听App\hobby model的create事件
+// Event::listen('eloquent.created: App\hobby', function(){
+//     dump(' A hobby is created');
+// });
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +19,7 @@ Event::listen('eloquent.created: \App\Post', function(){
 */
 
 Route::name('dashbord')->get('/', function () {
-    return view('welcome');
+    \App\hobby::create(['user_id' => 2, 'hobby' => '冰岛啤酒']);
 });
 
 Auth::routes();

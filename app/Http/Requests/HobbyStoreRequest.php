@@ -24,7 +24,7 @@ class HobbyStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => 'integer|min:2',
+            'user_id' => 'integer',
             'hobby' => 'string'
         ];
     }
