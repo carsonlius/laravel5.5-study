@@ -58,7 +58,8 @@ Route::get('/hobbys/sort', function(){
 });
 
 
-Route::get('/mail/markdown', function() {
+Route::name('mail')->get('/mail/markdown', function() {
+    
     $obj_email = new App\Mail\LessonPublished(App\User::first());
 
     Mail::to(App\User::first())->send($obj_email);

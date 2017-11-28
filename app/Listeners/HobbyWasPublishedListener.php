@@ -27,9 +27,9 @@ class HobbyWasPublishedListener
     public function handle(HobbyWasPublished $event)
     {
         dump('A hobby is post and i want to send an email');
-        dump($event->hobby);
-        $user = auth()->user();    
-        dump($user->toArray());
+        $user = auth()->user();
+        $obj_email = new \App\Mail\LessonPublished($user);
+        \Mail::to(\App\User::first())->send($obj_email);
 
     }
 }

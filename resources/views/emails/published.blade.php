@@ -1,7 +1,7 @@
 @component('mail::message')
 # Introduction
 
-{{$user->name}}用户开始使用markdown填写邮件
+{{$user['name']}}用户开始使用markdown填写邮件
 
 @component('mail::button', ['url' => 'http://laravel.carsonlius.cn'])
 Button Text
