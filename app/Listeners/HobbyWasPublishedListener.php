@@ -15,7 +15,7 @@ class HobbyWasPublishedListener
      */
     public function __construct()
     {
-        var_dump("hello world");
+        
     }
 
     /**
@@ -27,6 +27,9 @@ class HobbyWasPublishedListener
     public function handle(HobbyWasPublished $event)
     {
         dump('A hobby is post and i want to send an email');
-        dump($event);
+        dump($event->hobby);
+        $user = auth()->user();    
+        dump($user->toArray());
+
     }
 }

@@ -30,13 +30,6 @@ Route::get('/hobby/create', 'HobbyController@create');
 
 Route::post('/hobby/store', 'HobbyController@store');
 
-
-
-
-
-
-
-
 Route::get('/hobby/{hobby}', 'HobbyController@show');
 
 Route::get('/post/{post}', 'PostController@show');

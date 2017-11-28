@@ -11,15 +11,15 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel='stylesheet' href="/css/bootstrap.min.css" type='text/css' media='all'/>
-    <link rel='stylesheet' href="/css/all.css" type='text/css' media='all'/>
+    <link href="{{ asset('css/app.css?ver=1.0') }}" rel="stylesheet">
+  <!--   <link rel='stylesheet' href="/css/bootstrap.min.css" type='text/css' media='all'/>
+    <link rel='stylesheet' href="/css/all.css" type='text/css' media='all'/> -->
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 <body>
     <div id="app">
-   <!--      <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -73,7 +73,7 @@
                     </ul>
                 </div>
             </div>
-        </nav> -->
+        </nav>
 
         <div class="container">
 

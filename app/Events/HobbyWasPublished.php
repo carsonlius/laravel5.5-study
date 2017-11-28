@@ -24,7 +24,7 @@ class HobbyWasPublished
      */
     public function __construct($hobby)
     {
-        $this->bobby = $hobby;
+        $this->hobby = $hobby;
     }
 
     /**

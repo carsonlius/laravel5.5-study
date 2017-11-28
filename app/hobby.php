@@ -11,8 +11,8 @@ use App\Events\HobbyWasPublished;
 class hobby extends Authenticatable
 {
     protected $fillable =['hobby', 'user_id'];
-    
-    protected $events = [
+
+    protected $dispatchesEvents = [
     	'created' => HobbyWasPublished::class
     ];
 

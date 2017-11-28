@@ -46,7 +46,7 @@ class HobbyController extends Controller
 
        $result = \App\hobby::create($request->toArray());
        $hobby_last = $result->toArray();
-       event(new HobbyWasPublished($hobby_last));
+       // event(new HobbyWasPublished($hobby_last)); 单个触发的事件
 
         // return redirect('/hobby/' . $hobby_last['id']);
     }
