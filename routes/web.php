@@ -19,7 +19,7 @@ use Facades\App\Services\Weibo;
 */
 
 // 模仿id=2的用户登录 
-Auth::loginUsingId(3);
+// Auth::loginUsingId(3);
 
 Route::name('dashbord')->get('/', function () {
     return view('welcome');
@@ -75,9 +75,22 @@ Route::get('/Weibo/publish', function(){
 
 Route::get('/Hobbys/showFacade', 'HobbyController@showFacade');
 
+Route::get('/user/create', function(){
+
+
+    $data = [
+        'name' => 'wang3',
+        'email' => 'wang3@163.com',
+        'password' => '123456',
+        'is_admin' => 'N'
+    ];
+    \App\User::create($data);
+});
+
 // 测试middleware  
 Route::group(['prefix' => 'admin', 'middleware'=> 'must_be_an_admin'], function(){
     Route::get('/users', function(){
         return 'admin only';
     });
 });
+

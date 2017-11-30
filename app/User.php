@@ -5,10 +5,15 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Passport\HasApiTokens;
+use App\Events\UserSignUp;
 
 class User extends Authenticatable
 {
     use HasApiTokens,Notifiable;
+
+    protected $dispatchesEvents = [
+        'created' => UserSignUp::class
+    ];
 
     /**
      * The attributes that are mass assignable.

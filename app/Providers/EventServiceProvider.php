@@ -19,6 +19,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\HobbyWasPublished' => [
             'App\Listeners\HobbyWasPublishedListener',
         ],
+        'App\Events\UserSignUp' => [
+            'App\Listeners\HandUserSignUp',
+        ],
     ];
 
     /**
