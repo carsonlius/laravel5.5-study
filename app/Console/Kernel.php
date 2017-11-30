@@ -13,19 +13,21 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        \App\Console\Commands\ShowGreet::class,
+        \App\Console\Commands\Inspire::class,
+        \App\Console\Commands\LogInfo::class,
     ];
 
     /**
-     * Define the application's command schedule.
+     * Define the 's command schedule.
      *
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('LogInfo')
+                 ->everyMinute();
     }
 
     /**

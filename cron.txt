@@ -1,0 +1,1 @@
+* * * * * php /home/ubuntu/common/laravel5/artisan schedule:run >> /dev/null 2>&1

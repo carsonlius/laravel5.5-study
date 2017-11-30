@@ -4,27 +4,26 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class ShowGreet extends Command
+class Inspire extends Command
 {
     /**
      * The name and signature of the console command.
-     * params name 是传入的第一个参数
+     *
      * @var string
      */
-    protected $signature = 'ShowGreet:ShowGreet {name=彭丽霞}';
+    protected $signature = 'inspire';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = '欢迎';
+    protected $description = 'Display an inspire quote';
 
     /**
      * Create a new command instance.
      *
      * @return void
-
      */
     public function __construct()
     {
@@ -38,6 +37,15 @@ class ShowGreet extends Command
      */
     public function handle()
     {
-        $this->info("Hello, my dear " . $this->argument('name'));
+        $this->comment(PHP_EOL . Inspire::quote() . PHP_EOL);
+    }
+
+    /*
+    * just show a try
+    *
+    */
+    protected function quote()
+    {
+        $this->info('Inspire quote');
     }
 }

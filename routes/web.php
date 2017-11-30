@@ -18,15 +18,19 @@ use Facades\App\Services\Weibo;
 |
 */
 
+// 模仿id=2的用户登录 
+Auth::loginUsingId(3);
+
 Route::name('dashbord')->get('/', function () {
-    \App\hobby::create(['user_id' => 2, 'hobby' => '冰岛啤酒']);
+    return view('welcome');
+    // \App\hobby::create(['user_id' => 2, 'hobby' => '冰岛啤酒']);
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/hobby/create', 'HobbyController@create');
+Route::middleware('must_be_an_admin')->get('/hobby/create', 'HobbyController@create');
 
 Route::post('/hobby/store', 'HobbyController@store');
 
@@ -70,3 +74,10 @@ Route::get('/Weibo/publish', function(){
 });
 
 Route::get('/Hobbys/showFacade', 'HobbyController@showFacade');
+
+// 测试middleware  
+Route::group(['prefix' => 'admin', 'middleware'=> 'must_be_an_admin'], function(){
+    Route::get('/users', function(){
+        return 'admin only';
+    });
+});
