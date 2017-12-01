@@ -12,5 +12,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+
+        DB::table("posts")->truncate();
+        $this->call(CreateUserForTest::class);
+        $this->call(CreatePostSeeder::class);
+        $this->call(CreateArticlesSeeder::class);
+        DB::table('posts')->increment('user_id', 5);
+
     }
 }
