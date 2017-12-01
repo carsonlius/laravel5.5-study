@@ -76,7 +76,10 @@
                     @endauth
                 </div>
             @endif
+            <div>
+                @include('status.index')
 
+            </div>
             <div class="content">
                 <div class="title m-b-md">
                     Laravel

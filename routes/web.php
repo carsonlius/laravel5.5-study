@@ -61,7 +61,6 @@ Route::get('/hobbys/sort', function(){
     return $hobbys->values()->all();
 });
 
-
 Route::name('mail')->get('/mail/markdown', function() {
     
     $obj_email = new App\Mail\LessonPublished(App\User::first());
