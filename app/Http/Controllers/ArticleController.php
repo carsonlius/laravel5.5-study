@@ -14,7 +14,10 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        \DB::enableQueryLog();
+        $articles = Article::orderBy("id", 'asc')->paginate(5);
+        dump(\DB::getQueryLog());
+        return view('articles.index')->with(compact('articles'));
     }
 
     /**
