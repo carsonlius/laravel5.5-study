@@ -45,7 +45,12 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return $post;
+
+        // auth policy 
+        // \Auth::loginUsingId(1);
+        // $this->authorize('update', $post);
+
+        return view('posts.show')->with(compact('post'));
     }
 
     /**
@@ -67,7 +72,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+
     }
 
     /**

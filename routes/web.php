@@ -93,4 +93,5 @@ Route::group(['prefix' => 'admin', 'middleware'=> 'must_be_an_admin'], function(
 
 Route::get('/article/list', 'ArticleController@index');
 
+// 测试ACL
 Route::get('classmate/{classMate}', 'ClassMateController@show');
