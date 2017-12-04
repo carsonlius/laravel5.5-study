@@ -75,8 +75,6 @@ Route::get('/Weibo/publish', function(){
 Route::get('/Hobbys/showFacade', 'HobbyController@showFacade');
 
 Route::get('/user/create', function(){
-
-
     $data = [
         'name' => 'wang3',
         'email' => 'wang3@163.com',
@@ -94,3 +92,5 @@ Route::group(['prefix' => 'admin', 'middleware'=> 'must_be_an_admin'], function(
 });
 
 Route::get('/article/list', 'ArticleController@index');
+
+Route::get('classmate/{classMate}', 'ClassMateController@show');

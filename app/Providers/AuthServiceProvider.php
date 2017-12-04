@@ -27,6 +27,11 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
         Passport::routes();
 
+        // acl权限 判断当前的class_mate是不是用户的同学
+        Gate::define("show-classmate", function($user, $class_mate){
+            return $user->owns($class_mate);
+        });
+
         //
     }
 }

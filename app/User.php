@@ -37,4 +37,11 @@ class User extends Authenticatable
     {
         return $this->is_admin == 'Y';
     }
+
+    public function owns($class_mate)
+    {
+
+        // thsi->id 是当前登录账户的id
+        return $this->id == $class_mate->user_id;
+    }
 }

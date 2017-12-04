@@ -12,7 +12,7 @@ Class Http
 
 	public function post($status)
 	{
-		var_dump("I post this status: " . $status);
+		dump("I post this status: " . $status);
 
 	}
 

@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table("posts")->truncate();
         $this->call(CreateUserForTest::class);
+        $this->call(CreateClassMates::class);
         $this->call(CreatePostSeeder::class);
         $this->call(CreateArticlesSeeder::class);
         DB::table('posts')->increment('user_id', 5);
