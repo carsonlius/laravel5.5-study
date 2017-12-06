@@ -13,7 +13,7 @@ class CreatePermissionRole extends Migration
      */
     public function up()
     {
-        Schema::create('permisson_role', function (Blueprint $table) {
+        Schema::create('permission_role', function (Blueprint $table) {
             $table->integer('role_id')->unsigned();
             $table->integer('permission_id')->unsigned();
 
@@ -40,6 +40,6 @@ class CreatePermissionRole extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('permisson_role');
+        Schema::dropIfExists('permission_role');
     }
 }

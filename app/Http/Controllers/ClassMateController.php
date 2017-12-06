@@ -49,7 +49,7 @@ class ClassMateController extends Controller
 
         // acl 监测当前同学是不是登录用户的同学 两种方案 而在balde里面可以单独使用 @can标签 
 
-        \Auth::loginUsingId("57");
+        // \Auth::loginUsingId(1);
         // $this->authorize("show-classmate", $classMate);
         // if (\Gate::denies('show-classmate', $classMate)) {
         //     abort("403", "sorry this content is not allowed to show for you");
