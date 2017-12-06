@@ -30,7 +30,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::middleware('must_be_an_admin')->get('/hobby/create', 'HobbyController@create');
+Route::get('/hobby/create', 'HobbyController@create');
 
 Route::post('/hobby/store', 'HobbyController@store');
 

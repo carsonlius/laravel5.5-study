@@ -35,7 +35,7 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
-        return $this->is_admin == 'Y';
+        return $this->hasRole('admin');
     }
 
     public function owns($class_mate)

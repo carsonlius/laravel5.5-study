@@ -9,6 +9,12 @@ use App\Events\HobbyWasPublished;
 
 class HobbyController extends Controller
 {
+    public function __construct()
+    {
+        // $this->middleware('must_be_an_admin', ['only' => ['index', 'store', 'update', 'create']]);
+        $this->middleware('must_be_an_admin');
+
+    }
 
     public function showFacade()
     {
